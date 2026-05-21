@@ -9,8 +9,8 @@ permissions:
   contents: read
     
 jobs:
-  buils-push:
-    runs-on: my
+  build-push:
+    runs-on: [my, ubuntu]
     steps:
       - name: checkout
         uses: actions/checkout@v4
