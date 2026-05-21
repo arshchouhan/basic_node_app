@@ -10,7 +10,7 @@ permissions:
     
 jobs:
   build-push:
-    runs-on: [my, ubuntu]
+    runs-on: ubuntu
     steps:
       - name: checkout
         uses: actions/checkout@v4
