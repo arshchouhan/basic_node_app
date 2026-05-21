@@ -10,7 +10,7 @@ permissions:
     
 jobs:
   buils-push:
-    runs-on: ubuntu-latest
+    runs-on: my
     steps:
       - name: checkout
         uses: actions/checkout@v4
