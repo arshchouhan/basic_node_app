@@ -48,4 +48,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{github.actor}}/basic_node_app:new
+          tags: ghcr.io/${{github.actor}}/basic_node_app:new
