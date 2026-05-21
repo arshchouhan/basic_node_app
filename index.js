@@ -6,6 +6,8 @@ app.get('/',(req, res)=>{
     res.send("Hello Arsh")
 })
 
-// app.listen(3000, ()=>{
-//     console.log("Severing listening on port 3000")
-// })
+const server = app.listen(3000, ()=>{
+    console.log("Severing listening on port 3000")
+})
+
+module.exports = server
