@@ -1,8 +1,8 @@
 name: basic node app
-on: workflow_dispatch
-  # push:
-    # branches:
-      # - main
+on:
+  push:
+    branches:
+      - main
     
 jobs:
   buils-push:
@@ -35,12 +35,13 @@ jobs:
       - name: login
         uses: docker/login-action@v4
         with:
-          username: ${{secrets.DOCKER_USERNAME}}
-          password: ${{secrets.DOCKER_PASSWORD}} 
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}} 
       
       - name: build and push
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: ${{secrets.DOCKER_USERNAME}}/basic_node_app:new
+          tags: ${{github.actor}}/basic_node_app:new
