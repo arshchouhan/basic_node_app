@@ -2,7 +2,7 @@ name: basic node app
 on:
   push:
     branches:
-      -main
+      - main
     
 jobs:
   buils-push:
@@ -22,4 +22,4 @@ jobs:
        with:
          context: .
          push: true
-         tags: $${{secrets.DOCKER_USERNAME}}/basic_node_app:latest
+         tags: ${{secrets.DOCKER_USERNAME}}/basic_node_app:latest
