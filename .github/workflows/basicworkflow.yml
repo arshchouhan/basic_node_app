@@ -1,0 +1,14 @@
+name: basic workflow
+on: workflow_dispatch
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [13, 14, 20]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{matrix.node}}
+      - run: echo "hello world"
